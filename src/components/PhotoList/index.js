@@ -103,7 +103,7 @@ function PhotoList({category}) {
   const [currentPhoto, setCurrentPhoto] = useState();
   function toggleModal(image, i) {
     setCurrentPhoto({...image, index: i});
-    setIsModalOpen(true);
+    setIsModalOpen(!isModalOpen);
   }
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -111,7 +111,7 @@ function PhotoList({category}) {
   const currentPhotos = photos.filter(photo => photo.category === category);
   return (
     <div>
-      {isModalOpen && <Modal currentPhoto={currentPhoto} />}
+      {isModalOpen && <Modal currentPhoto={currentPhoto} onClose={toggleModal} />}
       {currentPhotos.map((image, i) => (
         <img
           src={require(`../../assets/small/${category}/${i}.jpg`)}
