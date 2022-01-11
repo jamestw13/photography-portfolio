@@ -6,6 +6,8 @@ import Nav from '..';
 const categories = [{name: 'portraits', description: 'Portraits of people in my life'}];
 const mockCurrentCategory = jest.fn();
 const mockSetCurrentCategory = jest.fn();
+const mockContactSelected = jest.fn();
+const mockSetContactSelected = jest.fn();
 
 afterEach(cleanup);
 
@@ -13,14 +15,26 @@ describe('Nav component', () => {
   // Baseline test
   it('renders', () => {
     render(
-      <Nav categories={categories} currentCategory={mockCurrentCategory} setCurrentCategory={mockSetCurrentCategory} />
+      <Nav
+        categories={categories}
+        currentCategory={mockCurrentCategory}
+        setCurrentCategory={mockSetCurrentCategory}
+        contactSelected={mockContactSelected}
+        setContactSelected={mockSetContactSelected}
+      />
     );
   });
 
   // Snapshot test
   it('matches snapshot', () => {
     const {asFragment} = render(
-      <Nav categories={categories} currentCategory={mockCurrentCategory} setCurrentCategory={mockSetCurrentCategory} />
+      <Nav
+        categories={categories}
+        currentCategory={mockCurrentCategory}
+        setCurrentCategory={mockSetCurrentCategory}
+        contactSelected={mockContactSelected}
+        setContactSelected={mockSetContactSelected}
+      />
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -29,7 +43,13 @@ describe('Nav component', () => {
 describe('emoji is visible', () => {
   it('inserts emoji into the h2', () => {
     const {getByLabelText} = render(
-      <Nav categories={categories} currentCategory={mockCurrentCategory} setCurrentCategory={mockSetCurrentCategory} />
+      <Nav
+        categories={categories}
+        currentCategory={mockCurrentCategory}
+        setCurrentCategory={mockSetCurrentCategory}
+        contactSelected={mockContactSelected}
+        setContactSelected={mockSetContactSelected}
+      />
     );
     expect(getByLabelText('camera')).toHaveTextContent('📸');
   });

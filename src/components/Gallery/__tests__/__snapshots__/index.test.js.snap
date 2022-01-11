@@ -32,7 +32,6 @@ exports[`Gallery is rendering matches snapshot 1`] = `
         class="img-thumbnail mx-1"
         src="3.jpg"
       />
-      )
     </div>
   </section>
 </DocumentFragment>
