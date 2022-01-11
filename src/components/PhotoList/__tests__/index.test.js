@@ -17,9 +17,4 @@ describe('PhotoList is rendering', () => {
     const {asFragment} = render(<PhotoList />);
     expect(asFragment()).toMatchSnapshot();
   });
-  // // Title match test
-  // it('renders', () => {
-  //   const {getByTestId} = render(<Gallery currentCategory={portrait} />);
-  //   expect(getByTestId('h1tag')).toHaveTextContent('Portraits');
-  // });
 });
