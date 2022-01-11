@@ -1,7 +1,7 @@
 {
   "name": "photo-port",
   "version": "0.1.0",
-  "homepage": "http://jamestw13.github.io/photo-port",
+  "homepage": "http://jamestw13.github.io/photography-portfolio",
   "private": true,
   "dependencies": {
     "@testing-library/user-event": "^13.5.0",
